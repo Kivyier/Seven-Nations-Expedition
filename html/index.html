@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#083b47">
+<title>Seven Nations Expedition – Book your next trip</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- ======================================================= 1. HEADER -->
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Seven Nations Expedition</a>
+  <input type="checkbox" id="menu" class="toggle" aria-label="Toggle menu"><label for="menu" class="menu-btn" aria-label="Toggle menu"><span class="sr-only">Toggle menu</span></label>
+  <nav id="nav" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#packages">Packages</a>
+    <a href="#bookings">My bookings</a>
+    <a href="#faq">FAQ and inquiry</a>
+    <a href="admin.html">Staff login</a>
+  </nav>
+</div></header>
+
+<main>
+
+<!-- ======================================================= 2. HERO + SEARCH -->
+<div class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="../image/hero.jpg" aria-hidden="true" tabindex="-1">
+    <source src="../video/genshin-home.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+  <div class="hero-intro">
+    <h1>Pack light. We handle the rest.</h1>
+    <p>Seven-nation tour packages with live slots and clear prices, priced per person.</p>
+  </div>
+  <nav class="hero-compass" aria-label="Explore Teyvat regions">
+    <span class="compass-orbit" aria-hidden="true"></span>
+    <span class="compass-name" aria-hidden="true">TEYVAT</span>
+    <a class="compass-node compass-mondstadt" href="mondstadt.html" aria-label="Explore Mondstadt"><span class="compass-dot"></span><span class="compass-label">Mondstadt</span></a>
+    <a class="compass-node compass-liyue" href="liyue.html" aria-label="Explore Liyue"><span class="compass-dot"></span><span class="compass-label">Liyue</span></a>
+    <a class="compass-node compass-inazuma" href="inazuma.html" aria-label="Explore Inazuma"><span class="compass-dot"></span><span class="compass-label">Inazuma</span></a>
+    <a class="compass-node compass-sumeru" href="sumeru.html" aria-label="Explore Sumeru"><span class="compass-dot"></span><span class="compass-label">Sumeru</span></a>
+    <a class="compass-node compass-fontaine" href="fontaine.html" aria-label="Explore Fontaine"><span class="compass-dot"></span><span class="compass-label">Fontaine</span></a>
+    <a class="compass-node compass-natlan" href="natlan.html" aria-label="Explore Natlan"><span class="compass-dot"></span><span class="compass-label">Natlan</span></a>
+    <a class="compass-node compass-snezhnaya" href="snezhnaya.html" aria-label="Explore Snezhnaya"><span class="compass-dot"></span><span class="compass-label">Snezhnaya</span></a>
+    <span class="compass-needle" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="10,100 100,92 190,100 100,108" fill="none" stroke="#E6B254" stroke-width="2" opacity=".8"/>
+        <polygon points="30,100 100,97 170,100 100,103" fill="#E6B254" opacity=".9"/>
+        <polygon points="100,20 104,100 100,180 96,100" fill="#FFEAA7" opacity=".7"/>
+        <polygon points="100,10 115,100 100,190 85,100" fill="#E6B254"/>
+        <polygon points="100,40 106,100 100,160 94,100" fill="#F4D03F"/>
+      </svg>
+    </span>
+  </nav>
+
+  <form class="filter" id="filter" aria-label="Search packages">
+    <div><label for="dest">Destination</label>
+      <select id="dest"><option value="">Any destination</option><option value="Mondstadt">Mondstadt</option><option value="Liyue">Liyue</option><option value="Inazuma">Inazuma</option><option value="Sumeru">Sumeru</option><option value="Fontaine">Fontaine</option><option value="Natlan">Natlan</option><option value="Snezhnaya">Snezhnaya</option></select></div>
+    <div><label for="date">Travel date</label><input id="date" type="date"></div>
+    <div><label for="bud">Budget per person</label>
+      <select id="bud">
+        <option value="">Any budget</option>
+        <option value="low">Under ₱15,000</option>
+        <option value="mid">₱15,000 – ₱20,000</option>
+        <option value="high">Above ₱20,000</option>
+      </select></div>
+    <div><label for="dur">Duration</label>
+      <select id="dur"><option value="">Any</option><option value="3D2N">3D2N</option><option value="3D3N">3D3N</option><option value="4D3N">4D3N</option><option value="5D4N">5D4N</option></select></div>
+    <div><label for="style">Travel style</label>
+      <select id="style"><option value="">Any style</option><option value="Nature">Nature</option><option value="Culinary">Culinary</option><option value="Culture">Culture</option><option value="Adventure">Adventure</option><option value="Leisure">Leisure</option><option value="Winter">Winter</option></select></div>
+    <a class="btn" href="#packages">Search tours</a>
+  </form>
+</div></div>
+
+<!-- ======================================================= 3. ABOUT -->
+<section id="about"><div class="wrap">
+  <div class="split about-main">
+    <div class="prose">
+      <h2>A travel agency built on real time on the road</h2>
+      <p>Seven Nations Expeditions started with its Director, a former traveler who has been across Teyvat. That experience is what the tour packages are built on: which places are worth a stop, how long a region really needs, and what a first-time visitor should not miss.</p>
+      <p>As the agency covers more nations, it gets harder to explain prices, destinations, and schedules one message at a time. This website puts everything in one place. Visitors can read about the agency, compare the seven packages, check the common questions, and send an inquiry when they are ready.</p>
+    </div>
+    <aside class="card points" aria-label="Agency highlights">
+      <p><b>Seven nations.</b> One package for each region, from Mondstadt to Snezhnaya.</p>
+      <p><b>Clear details.</b> Every package shows its stops, length of stay, price, and code.</p>
+      <p><b>Simple first step.</b> A short inquiry form for basic questions and contact details.</p>
+    </aside>
+  </div>
+  <aside class="card director-profile" aria-label="Director profile">
+    <div class="director-photo" role="img" aria-label="Placeholder portrait for the Director">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="46" r="22"/><path d="M16 120 C16 84 38 74 60 74 C82 74 104 84 104 120 Z"/></svg>
+    </div>
+    <div>
+      <p class="director-role">Director</p>
+      <p>A former traveler across Teyvat, the Director draws on firsthand experience to shape the agency’s destinations and tour itineraries.</p>
+    </div>
+  </aside>
+</div></section>
+
+<!-- ======================================================= 4. PACKAGES -->
+<section id="packages"><div class="wrap">
+  <div class="bar">
+    <h2>Available packages</h2>
+    <input type="checkbox" id="onlysaved" class="toggle"><label for="onlysaved" class="chip">♥ Saved only</label>
+  </div>
+  <div class="pkgs">
+    <article class="pkg" data-nation="Mondstadt" data-bud="low" data-dur="3D2N" data-style="Nature">
+      <div class="pic d1"><span>Mondstadt</span>
+        <input type="checkbox" id="s-mond" class="toggle"><label class="save" for="s-mond" aria-label="Save Mondstadt package">♥</label></div>
+      <div class="body">
+        <h3>The City of Freedom Expedition</h3>
+        <div class="tags"><span class="tag">3D2N</span><span class="tag">Nature</span><span class="tag">MOND-01</span><span class="tag">9 slots left</span></div>
+        <p>Windmills, rolling green hills and historic stone architecture for a relaxing nature getaway.</p>
+        <div class="buy"><div class="price">₱12,500 <small>per person</small></div><a class="btn sm" href="mondstadt.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Liyue" data-bud="mid" data-dur="4D3N" data-style="Culinary">
+      <div class="pic d2"><span>Liyue</span>
+        <input type="checkbox" id="s-liyue" class="toggle"><label class="save" for="s-liyue" aria-label="Save Liyue package">♥</label></div>
+      <div class="body">
+        <h3>The Harbor of Stone and Commerce</h3>
+        <div class="tags"><span class="tag">4D3N</span><span class="tag">Culinary</span><span class="tag">LIYU-02</span><span class="tag">12 slots left</span></div>
+        <p>Bustling port city, mountain ranges, ancient folklore and world-class food.</p>
+        <div class="buy"><div class="price">₱15,000 <small>per person</small></div><a class="btn sm" href="liyue.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Inazuma" data-bud="mid" data-dur="4D3N" data-style="Culture">
+      <div class="pic d3"><span>Inazuma</span>
+        <input type="checkbox" id="s-inazuma" class="toggle"><label class="save" for="s-inazuma" aria-label="Save Inazuma package">♥</label></div>
+      <div class="body">
+        <h3>The Realm of Eternal Thunder</h3>
+        <div class="tags"><span class="tag">4D3N</span><span class="tag">Culture</span><span class="tag">INAZ-03</span><span class="tag">7 slots left</span></div>
+        <p>Purple foliage, traditional shrines and serene coastal views.</p>
+        <div class="buy"><div class="price">₱18,000 <small>per person</small></div><a class="btn sm" href="inazuma.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Sumeru" data-bud="low" data-dur="3D3N" data-style="Adventure">
+      <div class="pic d4"><span>Sumeru</span>
+        <input type="checkbox" id="s-sumeru" class="toggle"><label class="save" for="s-sumeru" aria-label="Save Sumeru package">♥</label></div>
+      <div class="body">
+        <h3>The City of Wisdom &amp; Rainforest Retreat</h3>
+        <div class="tags"><span class="tag">3D3N</span><span class="tag">Adventure</span><span class="tag">SUME-04</span><span class="tag">15 slots left</span></div>
+        <p>From majestic halls of learning to the mystical rainforest canopy.</p>
+        <div class="buy"><div class="price">₱14,000 <small>per person</small></div><a class="btn sm" href="sumeru.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Fontaine" data-bud="mid" data-dur="5D4N" data-style="Leisure">
+      <div class="pic d5"><span>Fontaine</span>
+        <input type="checkbox" id="s-fontaine" class="toggle"><label class="save" for="s-fontaine" aria-label="Save Fontaine package">♥</label></div>
+      <div class="body">
+        <h3>The Capital of Justice, Steam, and Aquanics</h3>
+        <div class="tags"><span class="tag">5D4N</span><span class="tag">Leisure</span><span class="tag">FONT-05</span><span class="tag">5 slots left</span></div>
+        <p>Art, fashion and clockwork engineering surrounded by pristine waters.</p>
+        <div class="buy"><div class="price">₱20,000 <small>per person</small></div><a class="btn sm" href="fontaine.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Natlan" data-bud="mid" data-dur="4D3N" data-style="Adventure">
+      <div class="pic d6"><span>Natlan</span>
+        <input type="checkbox" id="s-natlan" class="toggle"><label class="save" for="s-natlan" aria-label="Save Natlan package">♥</label></div>
+      <div class="body">
+        <h3>The Land of Ash, Hot Springs, and Valor</h3>
+        <div class="tags"><span class="tag">4D3N</span><span class="tag">Adventure</span><span class="tag">NATL-06</span><span class="tag">10 slots left</span></div>
+        <p>Volcanic landscapes, thermal springs and vibrant tribal festivals.</p>
+        <div class="buy"><div class="price">₱16,500 <small>per person</small></div><a class="btn sm" href="natlan.html">View details</a></div>
+      </div>
+    </article>
+    <article class="pkg" data-nation="Snezhnaya" data-bud="high" data-dur="5D4N" data-style="Winter">
+      <div class="pic d7"><span>Snezhnaya</span>
+        <input type="checkbox" id="s-snezhnaya" class="toggle"><label class="save" for="s-snezhnaya" aria-label="Save Snezhnaya package">♥</label></div>
+      <div class="body">
+        <h3>The Eternal White Tundra</h3>
+        <div class="tags"><span class="tag">5D4N</span><span class="tag">Winter</span><span class="tag">SNEZ-07</span><span class="tag">4 slots left</span></div>
+        <p>Frosted palaces and cozy alpine chalets under the aurora.</p>
+        <div class="buy"><div class="price">₱22,000 <small>per person</small></div><a class="btn sm" href="snezhnaya.html">View details</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<!-- ======================================================= 5. MY BOOKINGS -->
+<section id="bookings"><div class="wrap">
+  <h2>My bookings</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Ref</th><th>Trip</th><th>Date</th><th>Balance</th><th>Status</th><th>Documents</th></tr></thead>
+    <tbody>
+      <tr><td>BT-2041</td><td>Mondstadt (MOND-01)</td><td>Nov 7, 2026</td><td>₱29,375</td><td><span class="st wait">Pending payment</span></td><td>Voucher available after payment</td></tr>
+      <tr><td>BT-1987</td><td>Liyue (LIYU-02)</td><td>Oct 3, 2026</td><td>₱0</td><td><span class="st ok">Confirmed</span></td><td><a class="btn sm" href="#">Download voucher (PDF)</a></td></tr>
+      <tr><td>BT-1610</td><td>Sumeru (SUME-04)</td><td>Mar 12, 2026</td><td>₱0</td><td><span class="st done">Completed</span></td><td><a class="btn sm alt" href="#">Itinerary (PDF)</a></td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<!-- ======================================================= 6. FAQ + INQUIRY (side by side) -->
+<section id="faq"><div class="wrap helpgrid">
+
+  <div class="faq">
+    <div class="katheryne-greeting">
+      <img class="katheryne-portrait" src="../image/katheryne.png" alt="Katheryne welcomes you to the Adventurers' Guild">
+      <div>
+        <p class="katheryne-quote">“Ad astra abyssosque!”</p>
+        <p class="katheryne-attribution">Katheryne · Adventurers' Guild</p>
+      </div>
+    </div>
+    <h2>Frequently asked questions</h2>
+    <p class="lead">Answers based on the package information we have so far. Anything not yet decided by the agency is marked as "to be confirmed."</p>
+    <div class="faqlist">
+      <details open><summary>What does the price of a package cover?<span class="faqicon"></span></summary>
+        <p>Each package shows a base price per person for the listed length of stay. The exact inclusions, such as meals, transport, and accommodation type, will be confirmed by the agency when you send an inquiry.</p></details>
+      <details><summary>Is the price per person or per group?<span class="faqicon"></span></summary>
+        <p>Prices are shown per person unless a package says otherwise. Group rates, if available, will be confirmed by the agency.</p></details>
+      <details><summary>How long are the tours?<span class="faqicon"></span></summary>
+        <p>Each package lists its length, such as 3D2N or 4D3N, on its card and details page.</p></details>
+      <details><summary>What is the package code for?<span class="faqicon"></span></summary>
+        <p>The package code, such as MOND-01, is a short reference you can quote when sending an inquiry or asking about a specific package.</p></details>
+      <details><summary>How do I book a package?<span class="faqicon"></span></summary>
+        <p>Use the booking form on the package's details page, or send a travel inquiry and the agency will follow up.</p></details>
+      <details><summary>Can I change the featured stops or the schedule?<span class="faqicon"></span></summary>
+        <p>To be confirmed by the agency. Send an inquiry with your preferred changes and they will let you know what's possible.</p></details>
+      <details><summary>What is the cancellation or refund policy?<span class="faqicon"></span></summary>
+        <p>To be confirmed by the agency.</p></details>
+    </div>
+  </div>
+
+  <form class="card inquiry" id="inquiry" action="#inquiry" aria-labelledby="inqh">
+    <h2 id="inqh">Send a travel inquiry</h2>
+    <p>Tell us where you would like to go and what you want to know. The agency will follow up with the details for your chosen package.</p>
+    <p class="notice"><b>Prototype notice:</b> this form is a design mockup. It does not send or save anything yet.</p>
+
+    <label for="iname">Full name</label>
+    <input id="iname" autocomplete="name" placeholder="Your full name">
+    <label for="iemail">Email address</label>
+    <input id="iemail" type="email" autocomplete="email" placeholder="you@example.com">
+    <label for="idest">Preferred destination</label>
+    <select id="idest"><option value="">Choose a nation</option><option value="Mondstadt">Mondstadt</option><option value="Liyue">Liyue</option><option value="Inazuma">Inazuma</option><option value="Sumeru">Sumeru</option><option value="Fontaine">Fontaine</option><option value="Natlan">Natlan</option><option value="Snezhnaya">Snezhnaya</option></select>
+    <label for="imsg">Message or inquiry</label>
+    <textarea id="imsg" rows="4" placeholder="Number of travelers, preferred dates, or any questions"></textarea>
+    <button class="btn block" type="submit">Send inquiry</button>
+    <p class="notice sm" id="inqMsg">Not implemented yet. This form does not send inquiries in the prototype.</p>
+  </form>
+
+</div></section>
+</main>
+
+<!-- ======================================================= 7. FOOTER -->
+<footer class="sitefoot"><div class="wrap footgrid">
+  <div>
+    <h3>Seven Nations Expedition</h3>
+    <p>Teyvat Travel Services</p>
+    <p class="notice sm">Static website prototype for ELECT IT-E1, ESIT 3-1.</p>
+  </div>
+  <div>
+    <h4>Explore</h4>
+    <a href="#about">About the agency</a>
+    <a href="#packages">Tour packages</a>
+    <a href="#faq">FAQ</a>
+    <a href="#inquiry">Send an inquiry</a>
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <p><b>Email:</b> contact@teyvat.example</p>
+    <p><b>Phone:</b> +63 (000) 000-0000</p>
+    <p><b>Office:</b> Expedition Office, Mondstadt City, Teyvat</p>
+    <p class="contact-note">Sample details for this frontend prototype.</p>
+  </div>
+</div></footer>
+
+<!-- ======================================================= 8. MOBILE HELPERS -->
+<nav class="dock" aria-label="Quick actions">
+  <a href="#packages">Packages</a>
+  <a href="#bookings">Bookings</a>
+  <a href="#faq">FAQ</a>
+  <a href="#inquiry">Inquire</a>
+</nav>
+<a class="totop" href="#" aria-label="Back to top">↑</a>
+</body>
+</html>
