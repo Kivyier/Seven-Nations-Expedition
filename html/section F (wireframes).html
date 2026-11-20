@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Nations Expedition – Wireframes</title>
+<style>
+  :root { --ink:#222; --mid:#777; --line:#bbb; --fill:#f1f1f1; --accent:#ddd; --note:#fff7d6; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, Segoe UI, sans-serif; color:var(--ink); background:#fafafa; }
+  header.doc { padding:2rem; background:#2b2b2b; color:#fff; }
+  header.doc h1 { margin:0 0 .3rem; font-size:1.6rem; }
+  header.doc p { margin:0; color:#ccc; }
+  main { max-width:1100px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+  h2 { margin:2.5rem 0 .4rem; font-size:1.2rem; border-bottom:2px solid var(--ink); padding-bottom:.3rem; }
+  h3 { margin:1.4rem 0 .5rem; font-size:1rem; }
+  p.desc { color:var(--mid); margin:.2rem 0 1rem; }
+
+  /* Wireframe primitives */
+  .frame { border:2px solid var(--ink); background:#fff; margin-bottom:1.25rem; }
+  .frame > .label { background:var(--ink); color:#fff; font-size:.75rem; padding:.2rem .6rem; letter-spacing:.04em; }
+  .box { border:1.5px dashed var(--line); background:var(--fill); padding:.5rem .6rem; margin:.4rem; color:var(--mid); font-size:.8rem; }
+  .box.solid { border-style:solid; color:var(--ink); background:#fff; }
+  .box.tall { min-height:90px; display:flex; align-items:center; justify-content:center; }
+  .box.short { min-height:36px; display:flex; align-items:center; justify-content:center; }
+  .btn-ph { display:inline-block; border:1.5px solid var(--ink); padding:.25rem .7rem; font-size:.78rem; background:#fff; color:var(--ink); }
+  .row { display:flex; flex-wrap:wrap; gap:.2rem; align-items:stretch; }
+  .row > * { flex:1 1 0; min-width:0; }
+  .cols2 { display:grid; grid-template-columns:1.6fr 1fr; gap:.5rem; }
+  .cols3 { display:grid; grid-template-columns:repeat(3,1fr); gap:.4rem; }
+  .cols4 { display:grid; grid-template-columns:repeat(4,1fr); gap:.4rem; }
+  .cols5 { display:grid; grid-template-columns:repeat(5,1fr); gap:.4rem; }
+  .nav-ph { display:flex; gap:.6rem; align-items:center; padding:.6rem; border-bottom:1.5px solid var(--ink); font-size:.8rem; }
+  .nav-ph .brand { font-weight:700; margin-right:auto; }
+  .note { background:var(--note); border:1px solid #d9c46a; padding:.4rem .6rem; font-size:.78rem; margin:.4rem; }
+  .compass-ph { border:1.5px solid var(--ink); border-radius:50%; aspect-ratio:1; width:min(100%,240px); margin:.5rem auto; position:relative; background:#f7f7f7; }
+  .compass-ph::before, .compass-ph::after { content:""; position:absolute; background:var(--mid); }
+  .compass-ph::before { left:50%; top:10%; bottom:10%; width:1px; }
+  .compass-ph::after { top:50%; left:10%; right:10%; height:1px; }
+  .compass-ph span { position:absolute; font-size:.65rem; background:#fff; border:1px solid var(--ink); padding:0 .2rem; transform:translate(-50%,-50%); }
+  .hero-ph { border:1.5px dashed var(--mid); background:repeating-linear-gradient(45deg,#f0f0f0 0 10px,#e6e6e6 10px 20px); padding:1rem; }
+  .table-ph { border:1px solid var(--ink); font-size:.75rem; }
+  .table-ph div { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line); padding:.25rem .4rem; }
+  .table-ph div:first-child { font-weight:700; background:var(--accent); }
+  .mobile { max-width:360px; border:2px solid var(--ink); background:#fff; margin:0 0 1.25rem; }
+  .dock-ph { display:grid; grid-template-columns:repeat(4,1fr); border-top:2px solid var(--ink); text-align:center; font-size:.75rem; padding:.5rem 0; background:#fff; }
+  .sitemap { font-family: ui-monospace, Menlo, monospace; font-size:.85rem; background:#fff; border:2px solid var(--ink); padding:1rem 1.25rem; line-height:1.8; }
+  .spec { font-size:.82rem; }
+  .spec th, .spec td { border:1px solid var(--line); padding:.35rem .5rem; text-align:left; vertical-align:top; }
+  .spec th { background:var(--accent); }
+  .spec { border-collapse:collapse; width:100%; background:#fff; }
+  @media (max-width:760px){ .cols2{grid-template-columns:1fr} .cols3,.cols4,.cols5{grid-template-columns:repeat(2,1fr)} }
+</style>
+</head>
+<body>
+
+<header class="doc">
+  <h1>Seven Nations Expedition – Wireframes</h1>
+  <p>Low-fidelity layout for every page of the site. Grey boxes are placeholders for content, not final design.</p>
+</header>
+
+<main>
+
+<!-- ============================================================ SITEMAP -->
+<h2>1. Sitemap</h2>
+<div class="sitemap">
+Home (index.html)
+├── About the agency          #about
+├── The Director              #director
+├── Packages &amp; Bookings      #packages
+├── My Bookings               #packages (saved section)
+├── FAQ &amp; Inquiry            #faq
+└── Region pages (7)
+    ├── mondstadt.html
+    ├── liyue.html
+    ├── inazuma.html
+    ├── sumeru.html
+    ├── fontaine.html
+    ├── natlan.html
+    └── snezhnaya.html
+</div>
+
+<!-- ============================================================ HOME -->
+<h2>2. Home page (index.html)</h2>
+<p class="desc">Desktop layout, top to bottom. The mobile version follows in section 5.</p>
+
+<div class="frame">
+  <div class="label">HEADER (sticky)</div>
+  <div class="nav-ph"><span class="brand">[Logo] Seven Nations Expedition</span><span>About</span><span>Packages</span><span>Director</span><span>FAQ</span><span class="btn-ph">Menu</span></div>
+</div>
+
+<div class="frame">
+  <div class="label">2A · HERO + SEARCH</div>
+  <div class="hero-ph" style="min-height:120px;">
+    <div class="cols2">
+      <div>
+        <div class="box solid">H1: Pack light. We handle the rest.</div>
+        <div class="box">Subtitle: seven-nation tour packages, live slots, clear prices</div>
+      </div>
+      <div class="box tall">Teyvat Compass (7 nodes, see section 4)</div>
+    </div>
+  </div>
+  <div class="box solid">Search bar: Destination ▾ · Travel date · Budget per person · [Search]</div>
+  <div class="note">Background: looping video with a poster image. Muted, decorative, aria-hidden.</div>
+</div>
+
+<div class="frame">
+  <div class="label">3 · ABOUT THE AGENCY (#about)</div>
+  <div class="box solid">Section title + intro paragraph</div>
+  <div class="cols4">
+    <div class="box tall">Stat 1</div><div class="box tall">Stat 2</div><div class="box tall">Stat 3</div><div class="box tall">Stat 4</div>
+  </div>
+  <div class="box">Short paragraph or image: why choose us</div>
+</div>
+
+<div class="frame">
+  <div class="label">3b · THE DIRECTOR (#director)</div>
+  <div class="cols2">
+    <div class="box tall">Director portrait</div>
+    <div>
+      <div class="box solid">Name and role</div>
+      <div class="box">Bio paragraph</div>
+      <div class="box">Key facts list</div>
+      <div class="box short">Link: Contact the director</div>
+    </div>
+  </div>
+</div>
+
+<div class="frame">
+  <div class="label">4 & 5 · PACKAGES + MY BOOKINGS (#packages)</div>
+  <div class="box solid">Section title + intro</div>
+  <div class="box">Filter row: Destination · Date · Budget · Sort · [Reset]</div>
+  <div class="cols4">
+    <div class="box tall">Package card<br>Image · Name · Tags · Slots left · Price · [View] [♥ Save]</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+    <div class="box tall">Package card</div>
+  </div>
+  <div class="note">Seven cards, one per region. Each card links to its region page.</div>
+  <h3>My Bookings (saved state)</h3>
+  <div class="box">List of saved or booked trips: name · date · guests · status · [Cancel]</div>
+  <div class="box short">Empty state: "No saved trips yet. Browse packages above."</div>
+</div>
+
+<div class="frame">
+  <div class="label">6 · FAQ + INQUIRY (#faq, side by side)</div>
+  <div class="cols2">
+    <div>
+      <div class="box solid">FAQ heading</div>
+      <div class="box">Accordion question 1</div>
+      <div class="box">Accordion question 2</div>
+      <div class="box">Accordion question 3</div>
+      <div class="box">Accordion question 4</div>
+    </div>
+    <div>
+      <div class="box solid">Send an inquiry</div>
+      <div class="box short">Name</div>
+      <div class="box short">Email</div>
+      <div class="box short">Destination (select)</div>
+      <div class="box">Message</div>
+      <div class="btn-ph">Send inquiry</div>
+    </div>
+  </div>
+</div>
+
+<div class="frame">
+  <div class="label">7 · FOOTER</div>
+  <div class="cols3">
+    <div class="box">Agency name · tagline · prototype notice</div>
+    <div class="box">Explore: About · Packages · FAQ · Inquiry</div>
+    <div class="box">Contact: email · phone · office (placeholders)</div>
+  </div>
+</div>
+
+<!-- ============================================================ REGION PAGE -->
+<h2>3. Region page template (e.g. mondstadt.html)</h2>
+<p class="desc">All seven region pages share this layout. Only the content changes.</p>
+
+<div class="frame">
+  <div class="label">HEADER (same as home)</div>
+  <div class="nav-ph"><span class="brand">[Logo] Seven Nations Expedition</span><span>About</span><span>Packages</span><span>Director</span><span>FAQ</span><span class="btn-ph">Menu</span></div>
+</div>
+
+<div class="frame">
+  <div class="label">REGION HERO (two columns)</div>
+  <div class="hero-ph">
+    <div class="cols2">
+      <div>
+        <div class="box short">← All packages</div>
+        <div class="box">Eyebrow: Region · CODE</div>
+        <div class="box solid">H1: Package title</div>
+        <div class="box short">Tags: duration · theme · code · slots left</div>
+        <div class="box">Lead paragraph</div>
+        <div class="box short">Price per person · [Book this trip] [Ask about it]</div>
+      </div>
+      <div class="box tall">Teyvat Compass (current region highlighted)</div>
+    </div>
+  </div>
+</div>
+
+<div class="frame">
+  <div class="label">TRIP DETAILS + BOOKING (two columns)</div>
+  <div class="cols2">
+    <div>
+      <div class="box solid">Featured stops (5 cards: photo · name · description)</div>
+      <div class="cols3"><div class="box tall">Stop 1</div><div class="box tall">Stop 2</div><div class="box tall">Stop 3</div></div>
+      <div class="box">Foods (collapsible gallery, 6 items)</div>
+      <div class="box solid">Itinerary (accordion: Day 1 open by default)</div>
+      <div class="cols2">
+        <div class="box">Included list</div>
+        <div class="box">Not included list</div>
+      </div>
+      <div class="box solid">Departures table</div>
+      <div class="table-ph">
+        <div><span>Date</span><span>Season</span><span>Price</span><span>Slots</span></div>
+        <div><span>Date 1</span><span>Regular</span><span>₱ price</span><span>x of 20</span></div>
+        <div><span>Date 2</span><span>Regular</span><span>₱ price</span><span>x of 20</span></div>
+        <div><span>Date 3</span><span>Peak</span><span>₱ price</span><span>x of 20</span></div>
+      </div>
+    </div>
+    <aside>
+      <div class="box solid" style="min-height:40px;">Book this trip (sticky on desktop)</div>
+      <div class="box short">Package (select)</div>
+      <div class="box short">Departure date · Tier</div>
+      <div class="box short">Adults · Children · Infants</div>
+      <div class="box">Add-ons (3 checkboxes)</div>
+      <div class="box">Price summary + total</div>
+      <div class="box">Guest details: name · ID · emergency contact · dietary</div>
+      <div class="box">Payment: plan + method + proof upload</div>
+      <div class="btn-ph" style="display:block;text-align:center;">Reserve and pay</div>
+    </aside>
+  </div>
+</div>
+
+<div class="frame">
+  <div class="label">OTHER REGIONS</div>
+  <div class="box">Chip row: Mondstadt · Liyue · Inazuma · Sumeru · Fontaine · Natlan · Snezhnaya (current chip highlighted)</div>
+</div>
+
+<div class="frame">
+  <div class="label">FOOTER (same as home)</div>
+  <div class="cols3"><div class="box">Agency</div><div class="box">Explore</div><div class="box">Contact</div></div>
+</div>
+
+<!-- ============================================================ COMPONENTS -->
+<h2>4. Shared components</h2>
+
+<div class="frame">
+  <div class="label">TEYVAT COMPASS (hero, desktop)</div>
+  <div class="compass-ph">
+    <span style="top:4%;left:50%;">Mondstadt</span>
+    <span style="top:24%;left:88%;">Liyue</span>
+    <span style="top:72%;left:88%;">Inazuma</span>
+    <span style="top:92%;left:68%;">Sumeru</span>
+    <span style="top:92%;left:32%;">Fontaine</span>
+    <span style="top:50%;left:6%;">Natlan</span>
+    <span style="top:14%;left:14%;">Snezhnaya</span>
+  </div>
+  <div class="note">Seven nodes arranged around a central "TEYVAT" label, with a needle that rotates to the hovered node. Hovered or focused node: the needle turns and the label appears. Current page is marked with aria-current.</div>
+</div>
+
+<div class="frame">
+  <div class="label">FLOATING COMPASS (all pages, appears after scrolling)</div>
+  <div class="box short" style="max-width:260px;margin-left:auto;">✦ Teyvat Compass  (button, bottom-right)</div>
+  <div class="box" style="max-width:260px;margin-left:auto;">Expanded panel: mini compass + "Hide ✕"</div>
+  <div class="note">Hidden at the top of the page. Shows once the user scrolls past about 65% of the hero. Opens and closes on click.</div>
+</div>
+
+<div class="frame">
+  <div class="label">BUTTONS & TAGS</div>
+  <div class="row">
+    <div class="btn-ph">Primary button</div>
+    <div class="btn-ph">Secondary button</div>
+    <div class="box short">Tag chip</div>
+    <div class="box short">Slots left badge</div>
+  </div>
+</div>
+
+<!-- ============================================================ MOBILE -->
+<h2>5. Mobile layout (≤ 1024px)</h2>
+<p class="desc">Columns stack into one. The compass moves below the hero text. The sticky booking panel becomes a full-width section after the details.</p>
+
+<div class="cols2" style="align-items:start;">
+  <div class="mobile">
+    <div class="label" style="background:#222;color:#fff;font-size:.72rem;padding:.2rem .5rem;">HOME</div>
+    <div class="box solid">Hero text</div>
+    <div class="box">Search (stacked fields)</div>
+    <div class="box tall">Compass (smaller)</div>
+    <div class="box">About</div>
+    <div class="box">Director</div>
+    <div class="box">Package cards (1 per row)</div>
+    <div class="box">FAQ</div>
+    <div class="box">Inquiry</div>
+    <div class="box">Footer</div>
+    <div class="dock-ph"><span>Home</span><span>Book</span><span>Regions</span><span>Inquire</span></div>
+  </div>
+  <div class="mobile">
+    <div class="label" style="background:#222;color:#fff;font-size:.72rem;padding:.2rem .5rem;">REGION PAGE</div>
+    <div class="box solid">Region hero text</div>
+    <div class="box tall">Compass</div>
+    <div class="box">Featured stops (1 per row)</div>
+    <div class="box">Foods</div>
+    <div class="box">Itinerary</div>
+    <div class="box">Departures (scrolls sideways)</div>
+    <div class="box solid">Book this trip (full width)</div>
+    <div class="box">Other regions chips</div>
+    <div class="box">Footer</div>
+    <div class="dock-ph"><span>Home</span><span>Book</span><span>Regions</span><span>Inquire</span></div>
+  </div>
+</div>
+
+<!-- ============================================================ SPEC -->
+<h2>6. Page inventory</h2>
+<table class="spec">
+  <tr><th>Page</th><th>Sections</th><th>Key interactions</th></tr>
+  <tr><td>index.html</td><td>Header, hero + search, about, director, packages &amp; bookings, FAQ &amp; inquiry, footer, mobile dock</td><td>Filter packages, save to My Bookings, open FAQ items, send inquiry, compass navigation</td></tr>
+  <tr><td>mondstadt.html</td><td>Header, region hero + compass, trip details, booking panel, other regions, footer</td><td>Foods gallery, itinerary accordion, departure table, price summary, reserve</td></tr>
+  <tr><td>liyue.html, inazuma.html, sumeru.html, fontaine.html, natlan.html, snezhnaya.html</td><td>Same as Mondstadt</td><td>Same as Mondstadt. Only content and theme color change.</td></tr>
+</table>
+
+</main>
+</body>
+</html>

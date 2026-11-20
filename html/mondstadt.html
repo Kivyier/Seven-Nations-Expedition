@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#083b47">
 <title>Mondstadt: The City of Freedom Expedition – Seven Nations Expedition</title>
 <link rel="stylesheet" href="../css/style.css">
+<script src="../js/main.js" defer></script>
 </head>
 <body>
 
@@ -15,10 +16,9 @@
   <input type="checkbox" id="menu" class="toggle" aria-label="Toggle menu"><label for="menu" class="menu-btn">Menu</label>
   <nav id="nav" aria-label="Main">
     <a href="index.html#about">About</a>
-    <a href="index.html#packages">Packages</a>
-    <a href="index.html#bookings">My bookings</a>
+    <a href="index.html#director">Director</a>
+    <a href="index.html#packages">Packages &amp; Bookings</a>
     <a href="index.html#faq">FAQ and inquiry</a>
-    <a href="admin.html">Staff login</a>
   </nav>
 </div></header>
 
@@ -26,15 +26,38 @@
 
 <!-- ======================================================= 2. REGION HERO + THEME MUSIC -->
 <div class="region-hero" style="--hero:url('../image/cof.jpg')"><div class="wrap">
-  <a class="back" href="index.html#packages">← All packages</a>
-  <p class="eyebrow">Mondstadt · MOND-01</p>
-  <h1>The City of Freedom Expedition</h1>
-  <div class="tags"><span class="tag">3D2N</span><span class="tag">Nature</span><span class="tag">MOND-01</span><span class="tag">9 slots left</span></div>
-  <p class="lead">Experience the romantic charm of windmills, rolling green hills and historic stone architecture. Perfect for a relaxing nature getaway.</p>
-  <div class="hero-row">
-    <div class="price">₱12,500 <small>per person</small></div>
-    <div class="actions"><a class="btn" href="#book">Book this trip</a><a class="btn alt light" href="index.html#inquiry">Ask about it</a></div>
+  <div class="region-hero-intro">
+    <a class="back" href="index.html#packages">← All packages</a>
+    <p class="eyebrow">Mondstadt · MOND-01</p>
+    <h1>The City of Freedom Expedition</h1>
+    <div class="tags"><span class="tag">3D2N</span><span class="tag">Nature</span><span class="tag">MOND-01</span><span class="tag">9 slots left</span></div>
+    <p class="lead">Experience the romantic charm of windmills, rolling green hills and historic stone architecture. Perfect for a relaxing nature getaway.</p>
+    <div class="hero-row">
+      <div class="price">₱12,500 <small>per person</small></div>
+      <div class="actions"><a class="btn" href="#book">Book this trip</a><a class="btn alt light" href="index.html#inquiry">Ask about it</a></div>
+    </div>
   </div>
+
+    <nav class="hero-compass" aria-label="Explore Teyvat regions">
+      <span class="compass-orbit" aria-hidden="true"></span>
+      <span class="compass-name" aria-hidden="true">TEYVAT</span>
+      <a class="compass-node compass-mondstadt" href="mondstadt.html" aria-current="page" aria-label="Explore Mondstadt"><span class="compass-dot"></span><span class="compass-label">Mondstadt</span></a>
+      <a class="compass-node compass-liyue" href="liyue.html" aria-label="Explore Liyue"><span class="compass-dot"></span><span class="compass-label">Liyue</span></a>
+      <a class="compass-node compass-inazuma" href="inazuma.html" aria-label="Explore Inazuma"><span class="compass-dot"></span><span class="compass-label">Inazuma</span></a>
+      <a class="compass-node compass-sumeru" href="sumeru.html" aria-label="Explore Sumeru"><span class="compass-dot"></span><span class="compass-label">Sumeru</span></a>
+      <a class="compass-node compass-fontaine" href="fontaine.html" aria-label="Explore Fontaine"><span class="compass-dot"></span><span class="compass-label">Fontaine</span></a>
+      <a class="compass-node compass-natlan" href="natlan.html" aria-label="Explore Natlan"><span class="compass-dot"></span><span class="compass-label">Natlan</span></a>
+      <a class="compass-node compass-snezhnaya" href="snezhnaya.html" aria-label="Explore Snezhnaya"><span class="compass-dot"></span><span class="compass-label">Snezhnaya</span></a>
+      <span class="compass-needle" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="10,100 100,92 190,100 100,108" fill="none" stroke="#E6B254" stroke-width="2" opacity=".8"/>
+          <polygon points="30,100 100,97 170,100 100,103" fill="#E6B254" opacity=".9"/>
+          <polygon points="100,20 104,100 100,180 96,100" fill="#FFEAA7" opacity=".7"/>
+          <polygon points="100,10 115,100 100,190 85,100" fill="#E6B254"/>
+          <polygon points="100,40 106,100 100,160 94,100" fill="#F4D03F"/>
+        </svg>
+      </span>
+    </nav>
 </div></div>
 
 <!-- ======================================================= 3. TRIP DETAILS + BOOKING -->
@@ -117,15 +140,15 @@
 
       <h3 class="mt">Payment</h3>
       <div class="pay">
-        <label><input type="radio" name="plan" checked> Pay in full</label>
-        <label><input type="radio" name="plan"> ₱5,000 deposit</label>
-        <label><input type="radio" name="plan"> Split in 3</label>
+        <label><input type="radio" name="plan" value="full" checked> Pay in full</label>
+        <label><input type="radio" name="plan" value="deposit"> ₱5,000 deposit</label>
+        <label><input type="radio" name="plan" value="split"> Split in 3</label>
       </div>
       <div class="pay">
-        <label><input type="radio" name="m" checked> GCash</label>
-        <label><input type="radio" name="m"> Maya</label>
-        <label><input type="radio" name="m"> Card</label>
-        <label><input type="radio" name="m"> Upload proof</label>
+        <label><input type="radio" name="m" value="gcash" checked> GCash</label>
+        <label><input type="radio" name="m" value="maya"> Maya</label>
+        <label><input type="radio" name="m" value="card"> Card</label>
+        <label><input type="radio" name="m" value="proof"> Upload proof</label>
       </div>
       <label for="proof">Proof of payment (if paying manually)</label>
       <input id="proof" type="file" accept="image/*,.pdf">
