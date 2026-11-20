@@ -331,13 +331,21 @@ ul.no   { list-style: "✕  "; }
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  padding-block: .85rem;
+  padding-block: 1.1rem;
 }
 .top nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .top nav a { color: #dff1ee; text-decoration: none; font-size: .95rem; }
 .top nav a:hover { color: var(--sun); }
 
-.brand { font: 700 1.3rem Georgia, serif; color: #fff; text-decoration: none; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font: 700 1.3rem Georgia, serif;
+  color: #fff;
+  text-decoration: none;
+}
+.brand-logo { width: 30px; height: 30px; flex: none; }
 
 .hero {
   position: relative;
@@ -1422,6 +1430,7 @@ ul.no   { list-style: "✕  "; }
 /* 13. Footer
    ========================================================================== */
 .sitefoot { margin-top: 1.5rem; padding: 2.5rem 0; background: #062933; color: #b8d5d0; font-size: .9rem; }
+.foot-logo { width: 28px; height: 28px; display: inline-block; vertical-align: middle; margin-right: .4rem; }
 .footgrid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
 .footgrid h3 { color: #fff; margin-bottom: .3rem; }
 .footgrid h4 { color: var(--sun); font-size: .95rem; margin: 0 0 .6rem; }
