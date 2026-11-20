@@ -140,6 +140,11 @@ h4 { font-size: 1rem; color: var(--deep); margin: 1.25rem 0 .5rem; }
 section { padding: 1.75rem 0; }
 
 .two   { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.two > aside, .two > .book-sidebar-stack {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+  align-self: start;
+}
 .split { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
 .two > *, .split > * { min-width: 0; }
 
@@ -1701,6 +1706,7 @@ body.modal-open { overflow: hidden; }
   .pkg .pic { width: 100%; height: 160px; min-height: 0; }
 
   .two, .split, .helpgrid, .footgrid, .inc, .f2 { grid-template-columns: 1fr; }
+  .two > aside, .two > .book-sidebar-stack { position: static; }
 
   .dock {
     position: fixed;
