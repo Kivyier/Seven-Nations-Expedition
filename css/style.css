@@ -1684,7 +1684,7 @@ body.modal-open { overflow: hidden; }
   .filter { grid-template-columns: 1fr 1fr; }
   .filter .btn { grid-column: 1 / -1; }
 
-  #about { padding: 3rem 0; }
+  #about { padding: 3rem 0; min-height: auto; }
   .about-grid { grid-template-columns: 1fr; gap: 2rem; }
 
   #director { padding: 3.5rem 0; min-height: auto; }
