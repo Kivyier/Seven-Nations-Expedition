@@ -373,14 +373,37 @@ ul.no   { list-style: "✕  "; }
 .top nav a:hover::after { width: 100%; }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  font: 700 1.3rem Georgia, serif;
+  gap: .55rem;
   color: #fff;
   text-decoration: none;
 }
-.brand-logo { width: 30px; height: 30px; flex: none; }
+.brand-mark {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  color: var(--sun);
+}
+.brand-copy {
+  display: grid;
+  gap: .05rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1;
+  letter-spacing: .015em;
+}
+.brand-copy small {
+  color: #b8d5d0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark { color: #ffeaa7; }
 
 .hero {
   position: relative;
@@ -526,7 +549,7 @@ ul.no   { list-style: "✕  "; }
   filter: drop-shadow(0 0 10px rgba(230, 178, 84, .4));
   pointer-events: none;
   transform: translate(-50%, -50%) rotate(0deg);
-  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+  transition: transform .3s cubic-bezier(.45, 0, .2, 1);
 }
 .compass-needle svg { display: block; width: 100%; height: 100%; }
 .compass-mondstadt:hover ~ .compass-needle,
@@ -549,7 +572,7 @@ ul.no   { list-style: "✕  "; }
   position: relative;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: .8rem;
   align-items: end;
   padding: 1rem;
@@ -561,6 +584,9 @@ ul.no   { list-style: "✕  "; }
     url("../image/db_bg.jpg") center / cover no-repeat;
 }
 .filter input, .filter select { height: 42px; }
+.filter select option:disabled { color: #85928f; background: #edf1f0; }
+/* Hides the retired availability note in a cached copy of the page. */
+.filter-availability { display: none !important; }
 
 
 /* 7. About Section
