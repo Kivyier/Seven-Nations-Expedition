@@ -337,7 +337,38 @@ ul.no   { list-style: "✕  "; }
 .top nav a { color: #dff1ee; text-decoration: none; font-size: .95rem; }
 .top nav a:hover { color: var(--sun); }
 
-.brand { font: 700 1.3rem Georgia, serif; color: #fff; text-decoration: none; }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  color: #fff;
+  text-decoration: none;
+}
+.brand-mark {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+  color: var(--sun);
+}
+.brand-copy {
+  display: grid;
+  gap: .05rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 1;
+  letter-spacing: .015em;
+}
+.brand-copy small {
+  color: #b8d5d0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark { color: #ffeaa7; }
 
 .hero {
   position: relative;
@@ -518,6 +549,14 @@ ul.no   { list-style: "✕  "; }
     url("../image/db_bg.jpg") center / cover no-repeat;
 }
 .filter input, .filter select { height: 42px; }
+.filter select option:disabled { color: #85928f; background: #edf1f0; }
+.filter-availability {
+  grid-column: 1 / -1;
+  margin: -.15rem 0 0;
+  color: var(--mute);
+  font-size: .78rem;
+  line-height: 1.35;
+}
 
 
 /* 7. About Section

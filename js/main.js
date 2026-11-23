@@ -546,6 +546,13 @@
     const emptyBox   = $('#pkgEmpty');
     const emptyText  = $('#pkgEmptyText');
     const emptyReset = $('#pkgEmptyReset');
+    const availability = $('#filterAvailability');
+    const filterFields = [
+      { key: 'nation', control: $('#dest') },
+      { key: 'bud',    control: $('#bud') },
+      { key: 'dur',    control: $('#dur') },
+      { key: 'style',  control: $('#style') }
+    ];
 
     const lastDeparture = DEPARTURES[DEPARTURES.length - 1].iso;
 
@@ -570,7 +577,44 @@
       return true;
     }
 
+    function syncOptionAvailability() {
+      let selectionsChanged = true;
+
+      while (selectionsChanged) {
+        selectionsChanged = false;
+        const f = readFilters();
+
+        filterFields.forEach(({ key, control }) => {
+          $$('option', control).forEach((option) => {
+            if (!option.value) {
+              option.disabled = false;
+              return;
+            }
+
+            const candidate = { ...f, [key]: option.value };
+            option.disabled = !cards.some((card) => matches(card, candidate));
+          });
+
+          if (control.value && control.selectedOptions[0].disabled) {
+            control.value = '';
+            selectionsChanged = true;
+          }
+        });
+      }
+
+      if (availability) {
+        const disabledOptions = filterFields.reduce(
+          (count, { control }) => count + $$('option:disabled', control).length,
+          0
+        );
+        availability.textContent = disabledOptions
+          ? `${disabledOptions} incompatible filter option${disabledOptions === 1 ? '' : 's'} ${disabledOptions === 1 ? 'is' : 'are'} unavailable for the current selection.`
+          : 'All filter options are available for the current selection.';
+      }
+    }
+
     function apply() {
+      syncOptionAvailability();
       const f = readFilters();
       let shown = 0;
 
