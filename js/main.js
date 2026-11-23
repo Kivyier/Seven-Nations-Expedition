@@ -484,6 +484,43 @@
     checkScroll();
   }
 
+  function initCompassNavigation() {
+    const rotations = {
+      'compass-mondstadt': 0,
+      'compass-liyue': 60,
+      'compass-inazuma': 120,
+      'compass-sumeru': 165,
+      'compass-fontaine': 195,
+      'compass-natlan': 270,
+      'compass-snezhnaya': 315
+    };
+
+    $$('.hero-compass').forEach((compass) => {
+      const needle = $('.compass-needle', compass);
+      if (!needle) return;
+
+      $$('.compass-node', compass).forEach((node) => {
+        const className = Object.keys(rotations).find((name) => node.classList.contains(name));
+        const href = node.getAttribute('href');
+        if (!className || !href) return;
+
+        node.addEventListener('click', (event) => {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          event.preventDefault();
+          if (compass.dataset.navigating) return;
+
+          compass.dataset.navigating = 'true';
+          needle.style.transition = 'transform 3s cubic-bezier(.45, 0, .2, 1)';
+          needle.style.transform = `translate(-50%, -50%) rotate(${rotations[className] + 360}deg)`;
+
+          window.setTimeout(() => {
+            window.location.assign(href);
+          }, 3000);
+        });
+      });
+    });
+  }
+
 
   /* ========================================================================
      5. LANDING PAGE: PACKAGES, SAVED HEARTS & BOOKING PREVIEWS
@@ -546,6 +583,12 @@
     const emptyBox   = $('#pkgEmpty');
     const emptyText  = $('#pkgEmptyText');
     const emptyReset = $('#pkgEmptyReset');
+    const filterFields = [
+      { key: 'nation', control: $('#dest') },
+      { key: 'bud',    control: $('#bud') },
+      { key: 'dur',    control: $('#dur') },
+      { key: 'style',  control: $('#style') }
+    ];
 
     const lastDeparture = DEPARTURES[DEPARTURES.length - 1].iso;
 
@@ -570,7 +613,35 @@
       return true;
     }
 
+    function syncOptionAvailability() {
+      let selectionsChanged = true;
+
+      while (selectionsChanged) {
+        selectionsChanged = false;
+        const f = readFilters();
+
+        filterFields.forEach(({ key, control }) => {
+          $$('option', control).forEach((option) => {
+            if (!option.value) {
+              option.disabled = false;
+              return;
+            }
+
+            const candidate = { ...f, [key]: option.value };
+            option.disabled = !cards.some((card) => matches(card, candidate));
+          });
+
+          if (control.value && control.selectedOptions[0].disabled) {
+            control.value = '';
+            selectionsChanged = true;
+          }
+        });
+      }
+
+    }
+
     function apply() {
+      syncOptionAvailability();
       const f = readFilters();
       let shown = 0;
 
@@ -1010,23 +1081,7 @@
       }))
     ]);
 
-    const otherRegions = PACKAGE_LIST.filter((p) => p.nation !== currentPkg.nation);
-    const switcherCard = el('div', { class: 'card mt region-filler-card' }, [
-      el('h3', { text: 'Compare other nations' }),
-      el('p', {
-        class: 'lead',
-        style: 'font-size:.88rem; margin-bottom:.75rem;',
-        text: 'Switch directly to another Teyvat expedition:'
-      }),
-      el('div', { class: 'region-links-grid' }, otherRegions.map((p) =>
-        el('a', { class: 'region-mini-link', href: `${p.slug}.html` }, [
-          el('strong', { text: p.nation }),
-          el('span', { text: peso(p.base) })
-        ])
-      ))
-    ]);
-
-    tableWrap.after(checklistCard, switcherCard);
+    tableWrap.after(checklistCard);
 
     rows.forEach((row) => {
       const cells = $$('td', row);
@@ -1138,6 +1193,9 @@
 
     form.parentNode.insertBefore(sidebarStack, form);
     bookModalBox.append(form);
+
+    const bookingHeading = parentCard ? $('#bk', parentCard) : null;
+    if (bookingHeading) bookingHeading.remove();
 
     const openBookingModal = () => {
       document.body.classList.add('modal-open');
@@ -1397,6 +1455,7 @@
      ======================================================================== */
   // Global
   initScrollCompass();
+  initCompassNavigation();
 
   // Landing Page (index.html)
   initSavedPersistence();
