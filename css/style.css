@@ -572,7 +572,7 @@ ul.no   { list-style: "✕  "; }
   position: relative;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: .8rem;
   align-items: end;
   padding: 1rem;
@@ -585,6 +585,8 @@ ul.no   { list-style: "✕  "; }
 }
 .filter input, .filter select { height: 42px; }
 .filter select option:disabled { color: #85928f; background: #edf1f0; }
+/* Hides the retired availability note in a cached copy of the page. */
+.filter-availability { display: none !important; }
 
 
 /* 7. About Section
