@@ -585,20 +585,6 @@ ul.no   { list-style: "✕  "; }
 }
 .filter input, .filter select { height: 42px; }
 .filter select option:disabled { color: #85928f; background: #edf1f0; }
-.filter-availability {
-  grid-column: 1 / -2;
-  align-self: center;
-  margin: 0;
-  padding: .5rem .7rem;
-  border: 1px solid rgba(8, 59, 71, .13);
-  border-radius: var(--r);
-  background: rgba(255, 255, 255, .7);
-  color: var(--deep);
-  font-size: .78rem;
-  font-weight: 600;
-  line-height: 1.35;
-}
-.filter > .btn { grid-column: -2 / -1; }
 
 
 /* 7. About Section
@@ -1779,7 +1765,6 @@ body.modal-open { overflow: hidden; }
   .region-hero .hero-compass { margin-top: 1.5rem; }
 
   .filter { grid-template-columns: 1fr 1fr; }
-  .filter-availability { grid-column: 1 / -1; }
   .filter .btn { grid-column: 1 / -1; }
 
   #about { padding: 3rem 0; min-height: auto; }

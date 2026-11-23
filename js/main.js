@@ -546,7 +546,6 @@
     const emptyBox   = $('#pkgEmpty');
     const emptyText  = $('#pkgEmptyText');
     const emptyReset = $('#pkgEmptyReset');
-    const availability = $('#filterAvailability');
     const filterFields = [
       { key: 'nation', control: $('#dest') },
       { key: 'bud',    control: $('#bud') },
@@ -602,15 +601,6 @@
         });
       }
 
-      if (availability) {
-        const disabledOptions = filterFields.reduce(
-          (count, { control }) => count + $$('option:disabled', control).length,
-          0
-        );
-        availability.textContent = disabledOptions
-          ? `${disabledOptions} incompatible filter option${disabledOptions === 1 ? '' : 's'} ${disabledOptions === 1 ? 'is' : 'are'} unavailable for the current selection.`
-          : 'All filter options are available for the current selection.';
-      }
     }
 
     function apply() {
