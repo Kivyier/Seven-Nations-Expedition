@@ -1081,23 +1081,7 @@
       }))
     ]);
 
-    const otherRegions = PACKAGE_LIST.filter((p) => p.nation !== currentPkg.nation);
-    const switcherCard = el('div', { class: 'card mt region-filler-card' }, [
-      el('h3', { text: 'Compare other nations' }),
-      el('p', {
-        class: 'lead',
-        style: 'font-size:.88rem; margin-bottom:.75rem;',
-        text: 'Switch directly to another Teyvat expedition:'
-      }),
-      el('div', { class: 'region-links-grid' }, otherRegions.map((p) =>
-        el('a', { class: 'region-mini-link', href: `${p.slug}.html` }, [
-          el('strong', { text: p.nation }),
-          el('span', { text: peso(p.base) })
-        ])
-      ))
-    ]);
-
-    tableWrap.after(checklistCard, switcherCard);
+    tableWrap.after(checklistCard);
 
     rows.forEach((row) => {
       const cells = $$('td', row);
@@ -1209,6 +1193,9 @@
 
     form.parentNode.insertBefore(sidebarStack, form);
     bookModalBox.append(form);
+
+    const bookingHeading = parentCard ? $('#bk', parentCard) : null;
+    if (bookingHeading) bookingHeading.remove();
 
     const openBookingModal = () => {
       document.body.classList.add('modal-open');
