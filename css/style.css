@@ -314,8 +314,6 @@ th { background: var(--deep); color: #fff; font-weight: 600; }
   border-color: var(--sun);
   background: #fff4e0;
   color: var(--deep);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(8, 59, 71, .12);
 }
 .chip:focus-visible { outline: 2px solid var(--sun); outline-offset: 2px; }
 .toggle:checked + .chip,
