@@ -484,6 +484,43 @@
     checkScroll();
   }
 
+  function initCompassNavigation() {
+    const rotations = {
+      'compass-mondstadt': 0,
+      'compass-liyue': 60,
+      'compass-inazuma': 120,
+      'compass-sumeru': 165,
+      'compass-fontaine': 195,
+      'compass-natlan': 270,
+      'compass-snezhnaya': 315
+    };
+
+    $$('.hero-compass').forEach((compass) => {
+      const needle = $('.compass-needle', compass);
+      if (!needle) return;
+
+      $$('.compass-node', compass).forEach((node) => {
+        const className = Object.keys(rotations).find((name) => node.classList.contains(name));
+        const href = node.getAttribute('href');
+        if (!className || !href) return;
+
+        node.addEventListener('click', (event) => {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          event.preventDefault();
+          if (compass.dataset.navigating) return;
+
+          compass.dataset.navigating = 'true';
+          needle.style.transition = 'transform 3s cubic-bezier(.45, 0, .2, 1)';
+          needle.style.transform = `translate(-50%, -50%) rotate(${rotations[className] + 360}deg)`;
+
+          window.setTimeout(() => {
+            window.location.assign(href);
+          }, 3000);
+        });
+      });
+    });
+  }
+
 
   /* ========================================================================
      5. LANDING PAGE: PACKAGES, SAVED HEARTS & BOOKING PREVIEWS
@@ -1431,6 +1468,7 @@
      ======================================================================== */
   // Global
   initScrollCompass();
+  initCompassNavigation();
 
   // Landing Page (index.html)
   initSavedPersistence();
