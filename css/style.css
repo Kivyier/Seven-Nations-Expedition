@@ -549,7 +549,7 @@ ul.no   { list-style: "✕  "; }
   filter: drop-shadow(0 0 10px rgba(230, 178, 84, .4));
   pointer-events: none;
   transform: translate(-50%, -50%) rotate(0deg);
-  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+  transition: transform 1.2s cubic-bezier(.45, 0, .2, 1);
 }
 .compass-needle svg { display: block; width: 100%; height: 100%; }
 .compass-mondstadt:hover ~ .compass-needle,
